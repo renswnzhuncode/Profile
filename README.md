@@ -1,8 +1,14 @@
-<h1 align="left">Hai, saya [Nama Kamu] 👋</h1>
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=2E5EAA&height=180&section=header&text=Hai,%20saya%20%5BNama%20Kamu%5D&fontSize=42&fontColor=F7F7F3&animation=fadeIn" />
+</p>
 
 <p align="left">
   Web Developer yang membangun aplikasi dengan sentuhan AI/ML —
   dari integrasi LLM ke produk nyata sampai bikin fitur pintar yang kepake.
+</p>
+
+<p align="left">
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=20&pause=1200&color=2E5EAA&center=false&vCenter=true&width=600&lines=Web+Development+%2B+AI%2FML;Membangun+produk%2C+bukan+cuma+demo;Belajar+in+public+%F0%9F%9A%80" />
 </p>
 
 <p align="left">
@@ -50,25 +56,6 @@
 
 ---
 
-### Proyek Pilihan
-
-<table>
-  <tr>
-    <td>
-      <b><a href="https://github.com/USERNAME/repo-1">Nama Project 1</a></b><br/>
-      Deskripsi singkat: apa yang dibangun, tech stack, dan hasil/dampaknya.
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <b><a href="https://github.com/USERNAME/repo-2">Nama Project 2</a></b><br/>
-      Deskripsi singkat: fitur AI yang diimplementasikan dan kenapa relevan.
-    </td>
-  </tr>
-</table>
-
----
-
 ### GitHub Stats
 
 <p align="left">
@@ -78,4 +65,57 @@
 
 ---
 
+### Contribution Snake 🐍
+
+<p align="left">
+  <img src="https://raw.githubusercontent.com/USERNAME/USERNAME/output/github-contribution-grid-snake.svg" />
+</p>
+
+> Animasi ini otomatis update tiap hari berdasarkan grafik kontribusi kamu.
+> Cara aktifin: lihat panduan setup di bagian bawah file ini.
+
+---
+
 <p align="left"><i>Update terakhir: [Bulan Tahun]</i></p>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=2E5EAA&height=100&section=footer" />
+
+---
+
+## Cara aktifin animasi Snake (sekali setup)
+
+1. Di repo profile kamu (`USERNAME/USERNAME`), buat folder `.github/workflows/`
+2. Buat file `snake.yml` di dalamnya, isinya:
+
+```yaml
+name: Generate Snake
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Platane/snk@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+      - uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
+3. Commit dan push. Buka tab **Actions** di repo, jalankan workflow-nya manual sekali (`workflow_dispatch`)
+4. Setelah selesai, branch baru bernama `output` otomatis kebuat berisi file SVG animasinya
+5. Ganti `USERNAME` di bagian "Contribution Snake" di atas dengan username GitHub kamu — animasinya bakal update sendiri tiap hari
